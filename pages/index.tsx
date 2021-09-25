@@ -5,12 +5,6 @@ import { useChromeExtension } from '../hooks/useChromeExtension';
 
 const Pages = () => {
     const sampleUrl = '';
-    // const sampleUrl = 'https://www.google.com/maps/search/Googlemap/@34.6493797,136.4906096,16z';
-    // const sampleUrl = 'https://www.google.com/maps/place/34%C2%B039\'03.2%22N+136%C2%B029\'33.8%22E/@34.6551142,136.4756721,17z/data=!4m9!1m2!2m1!1sGooglemap!3m5!1s0x0:0x0!7e2!8m2!3d34.650889!4d136.492734';
-    // const sampleUrl = 'https://www.google.com/maps/@34.651854,136.4901689,718m/data=!3m1!1e3';
-    // const sampleUrl = 'https://map.yahoo.co.jp/place?lat=34.71838&lon=136.49610&zoom=14&maptype=basic';
-    // const sampleUrl =
-    //     'https://maps.gsi.go.jp/#16/34.715803/136.502616/&base=std&ls=std&disp=1&vs=c1j0h0k0l0u0t0z0r0s0m0f1';
     const { tabPageUrl, tabPageTitle } = useChromeExtension();
     const data = useMapGeoData(tabPageUrl || sampleUrl);
     const links = useGeoToLink(data);

@@ -1,7 +1,7 @@
 {
   "name": "Map Switching Extension",
   "description": "Map Switching Extension",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "action": {
     "default_popup": "./dist/index.html",
     "default_icon": {

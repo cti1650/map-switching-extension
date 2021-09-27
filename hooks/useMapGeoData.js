@@ -4,8 +4,8 @@ export const useMapGeoData = (url) => {
   const [dataJson, setDataJson] = useState(null);
   // console.log('useMapGeoData:' + url);
   useEffect(() => {
-    if (~url.indexOf('https://www.google.com/maps/')) {
-      const word = url.replace('https://www.google.com/maps/', '');
+    if (~url.indexOf('https://www.google.') && ~url.indexOf('map')) {
+      const word = url.replace('https://www.google.', '');
       let re = /@(\d+\.\d+),(\d+\.\d+),(\d+[z,m,a])/i;
       let re2 = /!3d(\d+\.\d+)!4d(\d+\.\d+)$/i;
       const ex = word.match(re);
@@ -27,8 +27,8 @@ export const useMapGeoData = (url) => {
           long: ex[2],
         });
       }
-    } else if (~url.indexOf('https://map.yahoo.co.jp/')) {
-      const word = url.replace('https://map.yahoo.co.jp/', '');
+    } else if (~url.indexOf('https://map.yahoo.')) {
+      const word = url.replace('https://map.yahoo.', '');
       let re = /\?lat=(\d+\.\d+)&lon=(\d+\.\d+)/i;
       const ex = word.match(re);
       // console.log(ex);
